@@ -1,16 +1,10 @@
 import { createMedia } from "@artsy/fresnel";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Register } from "./components/Register";
-import { VerifyKYC } from "./components/VerifyKYC";
-import { useEffect } from "react";
-import setAuthorization from "./API/sila_api";
+import { Home } from "./components/Home";
+import { Signup } from "./components/Signup";
 import { Login } from "./components/Login";
-import { CheckVerification } from "./components/CheckVerification";
-import { ResumeVerification } from "./components/ResumeVerification";
-import { EntityInfo } from "./components/EntityInfo";
-import { UpdateInfo } from "./components/UpdateInfo";
-import { Documents } from "./components/Documents";
-import CreateLinkToken from "./components/CreateLinkToken";
+import { Dashboard } from "./components/Dashboard";
+import { Profile } from "./components/Profile";
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -27,16 +21,11 @@ const App = () => {
       <Media at="mobile">
         <BrowserRouter>
           <Routes>
-            <Route index element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="kyc" element={<VerifyKYC />} />
-            <Route path="/check_kyc" element={<CheckVerification />} />
-            <Route path="/resume_kyc" element={<ResumeVerification />} />
-            <Route path="/entity_info" element={<EntityInfo />} />
-            <Route path="/update_info" element={<UpdateInfo />} />
-            <Route path="/upload_document" element={<Documents />} />
-            <Route path="/link_token" element={<CreateLinkToken />} />
-
+            <Route index element={<Home />} />
+            <Route path="signup" element={<Signup />} />
+            <Route path="login" element={<Login />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="profile" element={<Profile />} />
 
           </Routes>
         </BrowserRouter>
@@ -45,15 +34,11 @@ const App = () => {
       <Media greaterThan="mobile">
         <BrowserRouter>
           <Routes>
-            <Route index element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/kyc" element={<VerifyKYC />} />
-            <Route path="/check_kyc" element={<CheckVerification />} />
-            <Route path="/resume_kyc" element={<ResumeVerification />} />
-            <Route path="/entity_info" element={<EntityInfo />} />
-            <Route path="/update_info" element={<UpdateInfo />} />
-            <Route path="/upload_document" element={<Documents />} />
-            <Route path="/link_token" element={<CreateLinkToken />} />
+            <Route index element={<Home />} />
+            <Route path="signup" element={<Signup />} />
+            <Route path="login" element={<Login />} />
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="profile" element={<Profile />} />
 
 
           </Routes>
